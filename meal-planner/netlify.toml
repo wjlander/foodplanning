@@ -1,0 +1,53 @@
+# Netlify configuration file for UK Meal Planner
+
+[build]
+  # Directory to publish (relative to root of your repo)
+  publish = "build"
+  
+  # Default build command
+  command = "npm run build"
+
+# Redirects and rewrites
+[[redirects]]
+  # SPA fallback
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers to set
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover
+  for = "/*"
+    [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  # Cache static assets
+  for = "/static/*"
+    [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Environment variables
+[build.environment]
+  # Add environment variables here for build time
+  NODE_VERSION = "16"
+  NPM_VERSION = "8"
+
+# Post processing
+[build.processing]
+  skip_processing = false
+[build.processing.css]
+  bundle = true
+  minify = true
+[build.processing.js]
+  bundle = true
+  minify = true
+[build.processing.html]
+  pretty_urls = true
+[build.processing.images]
+  compress = true
+
+# Functions
+[functions]
+  # Directory with serverless functions
+  directory = "functions"
