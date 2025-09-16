@@ -1,0 +1,176 @@
+/* Dark Theme Styles */
+:root[data-bs-theme="dark"] {
+  --bs-body-bg: #121212;
+  --bs-body-color: #e0e0e0;
+  --bs-primary: #90caf9;
+  --bs-primary-rgb: 144, 202, 249;
+  --bs-secondary: #ce93d8;
+  --bs-secondary-rgb: 206, 147, 216;
+  --bs-success: #81c784;
+  --bs-success-rgb: 129, 199, 132;
+  --bs-danger: #f48fb1;
+  --bs-danger-rgb: 244, 143, 177;
+  --bs-warning: #ffb74d;
+  --bs-warning-rgb: 255, 183, 77;
+  --bs-info: #4dd0e1;
+  --bs-info-rgb: 77, 208, 225;
+  --bs-light: #424242;
+  --bs-light-rgb: 66, 66, 66;
+  --bs-dark: #e0e0e0;
+  --bs-dark-rgb: 224, 224, 224;
+}
+
+.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Card styles for dark theme */
+:root[data-bs-theme="dark"] .card {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+:root[data-bs-theme="dark"] .card-header {
+  background-color: #2d2d2d;
+  border-bottom-color: #333;
+}
+
+:root[data-bs-theme="dark"] .card-footer {
+  background-color: #2d2d2d;
+  border-top-color: #333;
+}
+
+/* List group styles for dark theme */
+:root[data-bs-theme="dark"] .list-group-item {
+  background-color: #1e1e1e;
+  border-color: #333;
+  color: #e0e0e0;
+}
+
+:root[data-bs-theme="dark"] .list-group-item.active {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: #000;
+}
+
+/* Form styles for dark theme */
+:root[data-bs-theme="dark"] .form-control,
+:root[data-bs-theme="dark"] .form-select {
+  background-color: #2d2d2d;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+:root[data-bs-theme="dark"] .form-control:focus,
+:root[data-bs-theme="dark"] .form-select:focus {
+  background-color: #2d2d2d;
+  border-color: var(--bs-primary);
+  color: #e0e0e0;
+}
+
+/* Modal styles for dark theme */
+:root[data-bs-theme="dark"] .modal-content {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+:root[data-bs-theme="dark"] .modal-header {
+  border-bottom-color: #333;
+}
+
+:root[data-bs-theme="dark"] .modal-footer {
+  border-top-color: #333;
+}
+
+/* Navbar styles for dark theme */
+:root[data-bs-theme="dark"] .navbar {
+  background-color: #1e1e1e !important;
+}
+
+/* Table styles for dark theme */
+:root[data-bs-theme="dark"] .table {
+  color: #e0e0e0;
+}
+
+:root[data-bs-theme="dark"] .table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #e0e0e0;
+}
+
+:root[data-bs-theme="dark"] .table-hover > tbody > tr:hover > * {
+  background-color: rgba(255, 255, 255, 0.075);
+  color: #e0e0e0;
+}
+
+/* Button styles for dark theme */
+:root[data-bs-theme="dark"] .btn-outline-secondary {
+  color: #ce93d8;
+  border-color: #ce93d8;
+}
+
+:root[data-bs-theme="dark"] .btn-outline-secondary:hover {
+  background-color: #ce93d8;
+  color: #000;
+}
+
+/* Tab styles for dark theme */
+:root[data-bs-theme="dark"] .nav-tabs {
+  border-bottom-color: #333;
+}
+
+:root[data-bs-theme="dark"] .nav-tabs .nav-link.active {
+  background-color: #1e1e1e;
+  border-color: #333 #333 #1e1e1e;
+  color: var(--bs-primary);
+}
+
+:root[data-bs-theme="dark"] .nav-tabs .nav-link:not(.active) {
+  color: #e0e0e0;
+}
+
+:root[data-bs-theme="dark"] .nav-tabs .nav-link:hover:not(.active) {
+  border-color: #444;
+  color: var(--bs-primary);
+}
+
+/* Dropdown styles for dark theme */
+:root[data-bs-theme="dark"] .dropdown-menu {
+  background-color: #2d2d2d;
+  border-color: #444;
+}
+
+:root[data-bs-theme="dark"] .dropdown-item {
+  color: #e0e0e0;
+}
+
+:root[data-bs-theme="dark"] .dropdown-item:hover,
+:root[data-bs-theme="dark"] .dropdown-item:focus {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Alert styles for dark theme */
+:root[data-bs-theme="dark"] .alert-info {
+  background-color: rgba(77, 208, 225, 0.2);
+  border-color: rgba(77, 208, 225, 0.3);
+  color: #4dd0e1;
+}
+
+:root[data-bs-theme="dark"] .alert-success {
+  background-color: rgba(129, 199, 132, 0.2);
+  border-color: rgba(129, 199, 132, 0.3);
+  color: #81c784;
+}
+
+:root[data-bs-theme="dark"] .alert-warning {
+  background-color: rgba(255, 183, 77, 0.2);
+  border-color: rgba(255, 183, 77, 0.3);
+  color: #ffb74d;
+}
+
+:root[data-bs-theme="dark"] .alert-danger {
+  background-color: rgba(244, 143, 177, 0.2);
+  border-color: rgba(244, 143, 177, 0.3);
+  color: #f48fb1;
+}

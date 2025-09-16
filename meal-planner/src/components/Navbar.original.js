@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { FaBars, FaTimes, FaUser, FaSignOutAlt, FaUtensils, FaBarcode, FaDatabase, FaBook, FaChartPie, FaShoppingBasket, FaCog, FaHamburger } from 'react-icons/fa';
+import { FaBars, FaTimes, FaUser, FaSignOutAlt, FaUtensils, FaBarcode, FaDatabase, FaBook, FaChartPie, FaShoppingBasket, FaCog } from 'react-icons/fa';
 import { useAuth } from '../context/AuthContext';
 import { signOut } from '../utils/supabaseClient';
 import { toast } from 'react-toastify';
-import ThemeToggle from './ThemeToggle';
 
 const NavContainer = styled.nav`
   background-color: #2c3e50;
@@ -126,14 +125,6 @@ const CloseButton = styled.button`
   }
 `;
 
-const ThemeToggleContainer = styled.div`
-  margin: 0 15px;
-  
-  @media (max-width: 768px) {
-    margin: 15px 0;
-  }
-`;
-
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, setUser } = useAuth();
@@ -201,10 +192,7 @@ const Navbar = () => {
               <NavLink to="/settings" onClick={closeMenu}>
                 <FaCog /> Settings
               </NavLink>
-              <ThemeToggleContainer>
-                <ThemeToggle />
-              </ThemeToggleContainer>
-              <NavButton onClick={handleSignOut}
+              <NavButton onClick={handleSignOut}>
                 <FaSignOutAlt /> Sign Out
               </NavButton>
             </>
@@ -216,9 +204,6 @@ const Navbar = () => {
               <NavLink to="/register" onClick={closeMenu}>
                 Register
               </NavLink>
-              <ThemeToggleContainer>
-                <ThemeToggle />
-              </ThemeToggleContainer>
             </>
           )}
         </NavLinks>
