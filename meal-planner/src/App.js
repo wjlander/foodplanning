@@ -8,6 +8,9 @@ import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
 import LoadingSpinner from './components/LoadingSpinner';
 
+// Import styles
+import './styles/darkTheme.css';
+
 // Import pages
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -17,6 +20,7 @@ import MealPlanner from './pages/MealPlanner';
 import BarcodeScanner from './pages/BarcodeScanner';
 import FoodDatabase from './pages/FoodDatabase';
 import Recipes from './pages/Recipes';
+import ReadyMeals from './pages/ReadyMeals';
 import NutritionTracker from './pages/NutritionTracker';
 import ShoppingList from './pages/ShoppingList';
 import Settings from './pages/Settings';
@@ -25,6 +29,7 @@ import NotFound from './pages/NotFound';
 
 // Import context
 import { AuthProvider } from './context/AuthContext';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -72,9 +77,10 @@ function App() {
   }
 
   return (
-    <AuthProvider value={{ user, setUser }}>
-      <Routes>
-        <Route path="/" element={<Layout />}>
+    <ThemeProvider>
+      <AuthProvider value={{ user, setUser }}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
@@ -86,6 +92,7 @@ function App() {
             <Route path="barcode-scanner" element={<BarcodeScanner />} />
             <Route path="food-database" element={<FoodDatabase />} />
             <Route path="recipes" element={<Recipes />} />
+            <Route path="ready-meals" element={<ReadyMeals />} />
             <Route path="nutrition" element={<NutritionTracker />} />
             <Route path="shopping-list" element={<ShoppingList />} />
             <Route path="settings" element={<Settings />} />
@@ -99,6 +106,7 @@ function App() {
         </Route>
       </Routes>
     </AuthProvider>
+    </ThemeProvider>
   );
 }
 
